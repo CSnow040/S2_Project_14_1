@@ -5,8 +5,8 @@
    Tutorial 12
    Case Problem 1
 
-   Author: 
-   Date:   
+   Author: Caleb Snow
+   Date:   4/2/19
 
    Filename: na_styler.js
 
@@ -23,5 +23,5 @@
 
 
 function randInt(size) {
-   return Math.floor(size*Math.random());
+      return Math.floor(size * Math.random());
 }
