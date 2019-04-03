@@ -21,6 +21,23 @@
 
 */
 
+window.addEventListener("load", setStyles);
+
+function setStyles() {
+      var styleNum = randInt(5);
+      var fancySheet = document.createElement("link");
+      fancySheet.setAttribute("rel", "stylesheet");
+      fancySheet.setAttribute("id", "fancySheet");
+      fancySheet.setAttribute("href", "na_style_" + styleNum + ".css");
+      document.head.appendChild(fancySheet);
+      var figBox = document.createElement("figure");
+      figBox.setAttribute("id", "styleThumb");
+      document.getElementById("box").appendChild("figBox");
+}
+
+
+
+
 
 function randInt(size) {
       return Math.floor(size * Math.random());
