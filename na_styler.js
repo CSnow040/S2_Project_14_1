@@ -29,15 +29,45 @@ function setStyles() {
       fancySheet.setAttribute("rel", "stylesheet");
       fancySheet.setAttribute("id", "fancySheet");
       fancySheet.setAttribute("href", "na_style_" + styleNum + ".css");
+
       document.head.appendChild(fancySheet);
       var figBox = document.createElement("figure");
-      figBox.setAttribute("id", "styleThumb");
-      document.getElementById("box").appendChild("figBox");
+      figBox.setAttribute("id", "styleThumbs");
+      document.getElementById("box").appendChild(figBox);
+      //loops through the 5 images and their stylesheets
+      for (var i = 0; i <= 4; i++) {
+            var sheetImg = document.createElement("img");
+            sheetImg.setAttribute("src", "na_small_" + i + ".png");
+            sheetImg.setAttribute("alt", "na_style_" + i + ".css");
+            sheetImg.addEventListener("click", function (e) {
+                  document.getElementById("fancySheet").setAttribute("href", e.target.alt);
+            })
+
+            figBox.appendChild(sheetImg);
+      }
+      var styleThumbs = document.createElement("style");
+      document.head.appendChild(styleThumbs);
+      //this adds css styles into the index making the pictures go to the bottom
+      document.styleSheets[document.styleSheets.length - 1].insertRule(
+            "figure#styleThumbs { \
+            position: absolute; \
+            left: 0px; \
+            bottom: 0px; \
+            }", 0);
+
+      document.styleSheets[document.styleSheets.length - 1].insertRule(
+            "figure#styleThumbs img { \
+            outline: 1px solid black \
+            cursor: pointer; \
+            opacity: 0.75; \
+            }", 1);
+
+      document.styleSheets[document.styleSheets.length - 1].insertRule(
+            "figure#styleThumbs img:hover { \
+            outline: 1px solid red; \
+            opacity: 1.0; \
+            }", 2);
 }
-
-
-
-
 
 function randInt(size) {
       return Math.floor(size * Math.random());
