@@ -23,6 +23,7 @@
 
 window.addEventListener("load", setStyles);
 
+//this function is usde to make all of the attributes and elements to apply all of the styles to the document
 function setStyles() {
       var styleNum = randInt(5);
       var fancySheet = document.createElement("link");
